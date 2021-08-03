@@ -18,18 +18,6 @@
   color: var(--color-main);
 }
 
-
-
-/* [data-theme="dark"] {
-  --color-bg: var(--dark-color-bg);
-  --color-primary: var(--dark-color-primary);
-  --color-accent: var(--dark-color-accent);
-} */
-
-/* [data-theme="dark"] > .header {
-  background: var(--dark-color-primary);
-} */
-
 body {
   background-color: var(--color-bg);
   font-family: Verdana, Geneva, Tahoma, sans-serif;

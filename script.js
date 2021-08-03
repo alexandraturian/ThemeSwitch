@@ -1,19 +1,31 @@
-import { DARK_THEME, LIGHT_THEME } from '/colors.js';
+import { DARK_THEME, LIGHT_THEME } from './colors.js';
+
+const themeSwitcher = document.getElementById('theme-switch');
 
 const switchTheme = e => {
-  // (e.target.checked) ? 
-  //   document.body.setAttribute('data-theme', 'dark') : document.body.removeAttribute('data-theme');
   const isDarkTheme = !!e.target.checked;
   const theme = isDarkTheme ? DARK_THEME : LIGHT_THEME;
-  localStorage.setItem('theme', theme);
-  
+
+  setTheme(theme);
+  localStorage.setItem('theme', isDarkTheme ? 'DARK' : 'LIGHT');
+};
+
+const initTheme = () => {
+  const themeName = localStorage.getItem('theme');
+  const isDarkTheme = themeName === 'DARK';
+
+  const theme = isDarkTheme ? DARK_THEME : LIGHT_THEME;
+  themeSwitcher.checked = isDarkTheme;
+  setTheme(theme);
+};
+
+const setTheme = theme => {
   let root = document.documentElement;
   root.style.setProperty('--color-bg', theme['color-bg']);
   root.style.setProperty('--color-accent', theme['color-accent']);
   root.style.setProperty('--color-main', theme['color-main']);
-};
+}
 
-document
-  .getElementById('theme-switch')
-  .addEventListener('change', switchTheme);
+initTheme();
+themeSwitcher.addEventListener('change', switchTheme);
 
