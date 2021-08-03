@@ -1,0 +1,36 @@
+@import "theme.css";
+@import "switch.css";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-accent);
+  color: var(--color-main);
+  padding: 12px 18px;
+}
+
+.section-header {
+  color: var(--color-accent);
+}
+
+.section-content {
+  color: var(--color-main);
+}
+
+
+
+/* [data-theme="dark"] {
+  --color-bg: var(--dark-color-bg);
+  --color-primary: var(--dark-color-primary);
+  --color-accent: var(--dark-color-accent);
+} */
+
+/* [data-theme="dark"] > .header {
+  background: var(--dark-color-primary);
+} */
+
+body {
+  background-color: var(--color-bg);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
